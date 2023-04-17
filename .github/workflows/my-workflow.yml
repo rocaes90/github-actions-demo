@@ -5,3 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Welcome to my Workflow"
+
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm run install
+
+      - name: Run tests
+        run: npm run test -- src/utils/double.test.ts
